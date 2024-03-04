@@ -1,3 +1,11 @@
+```sh
+# pnpm --filter [name in package.json] [script]
+pnpm --filter cyberpunk dev
+# -r for recursive
+pnpm run -r build
+pnpm run --parallel -r build
+```
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -20,8 +28,8 @@ export default {
     ecmaVersion: 'latest',
     sourceType: 'module',
     project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+    tsconfigRootDir: __dirname
+  }
 }
 ```
 
