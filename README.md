@@ -34,6 +34,8 @@ dependencies: none
 - Shared tsconfig.json configuration
 - Shared Husky configuration (lint-staged, not necessarily)
 - Storybook with plugins (1 external, 1 internal)
+- Running in parallel
+- Managing updates
 
 ## Tools to try
 
