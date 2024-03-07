@@ -34,6 +34,12 @@ importers:
       react-icons:
         specifier: ^5.0.1
         version: 5.0.1(react@18.2.0)
+      shared:
+        specifier: workspace:*
+        version: link:../../packages/shared
+      sub-application:
+        specifier: workspace:*
+        version: link:../sub-application
     devDependencies:
       '@storybook/addon-essentials':
         specifier: ^7.6.17

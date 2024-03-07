@@ -5,7 +5,6 @@ import { SetupWorker } from 'msw';
 import App from './App';
 
 import './reset.css';
-import './main.css';
 
 const launchOffline = async () => {
   if (import.meta.env.VITE_OFFLINE !== 'true') {
