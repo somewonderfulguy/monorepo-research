@@ -8,6 +8,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "sub_application": "*"
+  },
   "devDependencies": {
     "nx": "^18.1.0"
   }

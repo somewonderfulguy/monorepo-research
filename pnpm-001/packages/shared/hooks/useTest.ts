@@ -1,5 +1,5 @@
 const useTest = () => {
-  return 'useTest'
+  return 'useTest_'
 }
 
 export default useTest

@@ -18,8 +18,9 @@
     "strictNullChecks": true,
     "noImplicitAny": true,
     "module": "commonjs",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "declaration": true
   },
-  "include": [".", "hooks"],
+  "include": ["."],
   "exclude": ["node_modules", "dist", "**/*.spec.ts"]
 }

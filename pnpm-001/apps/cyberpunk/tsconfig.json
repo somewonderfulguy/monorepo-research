@@ -5,6 +5,10 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "allowJs": false,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -16,10 +20,28 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+
+    /* Types */
+    "types": ["vitest/globals"],
+
+    /* Paths */
+    "baseUrl": "src",
+    "paths": {
+      /* keep in alphabetical order */
+      "~api/*": ["api/*"],
+      "~components/*": ["components/*"],
+      "~contexts/*": ["contexts/*"],
+      "~hooks/*": ["hooks/*"],
+      "~tests/*": ["tests/*"],
+      "~utils/*": ["utils/*"]
+    },
+
+    /* Plugins */
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["src"]
 }

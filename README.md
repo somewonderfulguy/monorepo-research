@@ -13,16 +13,19 @@ packages
   /shared
 ```
 
-`/cyberpunk` - root application\
+`/cyberpunk` - root application (Vite)\
 dependencies: `/design-system`, `/sub-application`, `/shared`
 
-`/design-system` - shared components with Storybook\
+`/next` - test application for making sure dependencies imported (Next.js)\
+dependencies: `/design-system`, `/sub-application`, `/shared`
+
+`/design-system` - shared components with Storybook (Vite)\
 dependencies: `/shared`
 
 `/sub-application` - another application (can be build and deployed separately & used by other applications)\
 dependencies: `/design-system`, `/shared`
 
-`/shared` - shared code\
+`/shared` - shared utils (perhaps, Rollup configured - setup tests for development)\
 dependencies: none
 
 ## Other requirements
@@ -34,6 +37,7 @@ dependencies: none
 - Shared tsconfig.json configuration
 - Shared Husky configuration (lint-staged, not necessarily)
 - Storybook with plugins (1 external, 1 internal)
+- Export component(s) with image, svg, and css (+ css modules)
 - Running in parallel
 - Managing updates
 

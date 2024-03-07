@@ -1,10 +1,31 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { SetupWorker } from 'msw';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+import App from './App';
+
+import './reset.css';
+import './main.css';
+
+const launchOffline = async () => {
+  if (import.meta.env.VITE_OFFLINE !== 'true') {
+    return;
+  }
+  const importResult = (await import('./api/offline')) as {
+    worker: SetupWorker;
+  };
+
+  await import('../public/mockServiceWorker.js?worker');
+
+  importResult.worker.start({
+    onUnhandledRequest: 'bypass'
+  });
+};
+
+launchOffline().then(() =>
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  )
+);

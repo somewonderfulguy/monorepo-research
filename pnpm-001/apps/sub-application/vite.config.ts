@@ -1,15 +1,25 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import dts from 'vite-plugin-dts'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), dts()],
   build: {
-    // copyPublicDir: false,
+    // minify: false,
+    target: 'esnext',
     lib: {
       entry: 'src/App.tsx',
-      name: 'shared',
-      fileName: 'index'
+      name: 'sub-application',
+      formats: ['es']
+      // fileName: (format) => `App.${format}.js`
+    },
+    rollupOptions: {
+      external: ['react', 'react-dom'],
+      output: {
+        entryFileNames: '[name].js'
+        // assetFileNames: '[name][extname]'
+        // globals
+      }
     }
   }
 })
