@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
+import path from 'path'
 
 export default defineConfig({
   plugins: [react(), dts()],
@@ -8,17 +9,31 @@ export default defineConfig({
     // minify: false,
     target: 'esnext',
     lib: {
-      entry: 'src/App.tsx',
-      name: 'sub-application',
+      entry: ['src/App.tsx', 'src/components/Button/Button.tsx'],
+      // name: 'sub-application',
       formats: ['es']
-      // fileName: (format) => `App.${format}.js`
+      // fileName: (format, path) => {
+      //   return path
+      // }
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
+
+      // "exports": {
+      //   ".": "./dist/App.js",
+      //   "./components/Button": "./dist/components/Button.js"
+      // },
       output: {
-        entryFileNames: '[name].js'
-        // assetFileNames: '[name][extname]'
-        // globals
+        entryFileNames: ({ facadeModuleId }) => {
+          const currentDirectory = path.basename(path.resolve('.'))
+          const buildPath = facadeModuleId?.split(`${currentDirectory}/src/`)[1]
+          if (buildPath) {
+            return buildPath.replace('.tsx', '.js')
+          } else {
+            console.warn('failed to get build path', facadeModuleId, buildPath)
+            return '[name].js'
+          }
+        }
       }
     }
   }
