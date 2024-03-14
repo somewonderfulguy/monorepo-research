@@ -22,7 +22,9 @@ const launchOffline = async () => {
 };
 
 launchOffline().then(() =>
-  createRoot(document.getElementById('root')!).render(
+  createRoot(document.getElementById('root')!, {
+    identifierPrefix: 'cyberpunk-'
+  }).render(
     <StrictMode>
       <App />
     </StrictMode>

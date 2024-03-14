@@ -5,11 +5,14 @@ import {
   SetStateAction,
   createContext,
   useContext,
+  useId,
   useState
 } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import viteLogo from '/vite-public.svg'
+// import viteLogo from './components/Button/assets/vite.svg'
 import './App.css'
+import './index.css'
 import Button from './components/Button'
 // import { ReactComponent as ReactLogo2 } from './assets/react.svg'
 
@@ -26,18 +29,9 @@ const useStringValue = () => {
   return context
 }
 
-/*
-const context = useContext(VideoEditorContext);
-  if (context === undefined) {
-    throw new Error(
-      'useVideoEditorContext must be used within a VideoEditorProvider'
-    );
-  }
-  return context;
-*/
-
 const useStringDispatch = () => {
   const context = useContext(StringDispatchContext)
+
   if (context === undefined) {
     throw new Error(
       'useStringDispatch must be used within a StringDispatchContext'
@@ -63,14 +57,14 @@ const ComponentStringReader = () => {
   return <div>ComponentStringReader {string}</div>
 }
 
-const AppWrapper = () => {
+const AppWrapper = ({ testProp }: { testProp?: string }) => {
   const [string, setString] = useState<string>('test')
 
   return (
     <StringDispatchContext.Provider value={setString}>
       <StringContext.Provider value={string}>
         {/* as you pass subComponent as prop it won't be re-rendered on every state change of App component */}
-        <App subComponent={<AnotherComponent />} />
+        <App testProp={testProp} subComponent={<AnotherComponent />} />
       </StringContext.Provider>
     </StringDispatchContext.Provider>
   )
@@ -86,7 +80,8 @@ function App({
   const [count, setCount] = useState(0)
   const result = useTest()
 
-  console.log('parent render')
+  const id = useId()
+  console.log('parent render', id)
 
   return (
     <>

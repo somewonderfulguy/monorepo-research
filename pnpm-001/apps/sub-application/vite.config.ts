@@ -2,27 +2,19 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 import path from 'path'
+import { libInjectCss } from 'vite-plugin-lib-inject-css'
+import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [react(), libInjectCss(), libAssetsPlugin(), dts()],
   build: {
-    // minify: false,
     target: 'esnext',
     lib: {
       entry: ['src/App.tsx', 'src/components/Button/Button.tsx'],
-      // name: 'sub-application',
       formats: ['es']
-      // fileName: (format, path) => {
-      //   return path
-      // }
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
-
-      // "exports": {
-      //   ".": "./dist/App.js",
-      //   "./components/Button": "./dist/components/Button.js"
-      // },
       output: {
         entryFileNames: ({ facadeModuleId }) => {
           const currentDirectory = path.basename(path.resolve('.'))
