@@ -9,7 +9,7 @@ Trying different monorepo tools to achieve the same goal (application's structur
   /cyberpunk
   /design-system
   /sub-application
-packages
+/packages
   /shared
 ```
 
@@ -35,6 +35,7 @@ dependencies: none
 - Shared Prettier configuration
 - Shared .editorconfig configuration
 - Shared tsconfig.json configuration
+- Shared pure CSS (e.g. reset.css); support fonts importing
 - Shared Husky configuration (lint-staged, not necessarily)
 - Storybook with plugins (1 external, 1 internal)
 - Export component(s) with image, svg, and css (+ css modules)
