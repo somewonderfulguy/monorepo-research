@@ -7,6 +7,7 @@ Trying different monorepo tools to achieve the same goal (application's structur
 ```
 /apps
   /cyberpunk
+  /next
   /design-system
   /sub-application
 /packages
@@ -16,7 +17,7 @@ Trying different monorepo tools to achieve the same goal (application's structur
 `/cyberpunk` - root application (Vite)\
 dependencies: `/design-system`, `/sub-application`, `/shared`
 
-`/next` - test application for making sure dependencies imported (Next.js)\
+`/next` - test full-stack application (Next.js) for making sure dependencies imported\
 dependencies: `/design-system`, `/sub-application`, `/shared`
 
 `/design-system` - shared components with Storybook (Vite)\

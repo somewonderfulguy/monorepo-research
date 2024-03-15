@@ -2,9 +2,9 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { SetupWorker } from 'msw';
 
-import App from './App';
+import 'sub-application/styles/reset.css';
 
-import './reset.css';
+import App from './App';
 
 const launchOffline = async () => {
   if (import.meta.env.VITE_OFFLINE !== 'true') {
