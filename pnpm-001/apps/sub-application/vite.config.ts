@@ -1,9 +1,10 @@
-import { defineConfig } from 'vite'
+import { defineConfig, Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import dts from 'vite-plugin-dts'
 import path from 'path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
+import { Plugin as PluginRollup } from 'rollup'
 
 // for future: vite build --config vite.lib.config.js
 
@@ -19,8 +20,31 @@ const entriesData: Record<string, { code: string; css?: string }> = {
   reset: {
     code: 'src/styles/reset.css',
     css: 'styles/reset.css'
+  },
+  log: {
+    code: 'src/utils/log.ts'
   }
 }
+
+const vitePlugin = (): Plugin => {
+  return {
+    name: 'my-plugin',
+    apply: 'build',
+    configResolved(config) {
+      // console.log('configResolved', config)
+    }
+  }
+}
+
+const rollupPlugin = (): PluginRollup => ({
+  name: 'my-rollup-plugin',
+  buildStart(data) {
+    // console.log(data, 'buildStart')
+  },
+  writeBundle(normalizedOutputOptions, outputBundle) {
+    // console.log('outputBundle', normalizedOutputOptions)
+  }
+})
 
 const entry = Object.values(entriesData).map(({ code }) => code)
 
@@ -44,6 +68,7 @@ export default defineConfig({
         return 'assets'
       }
     }),
+    vitePlugin(),
     dts()
   ],
   build: {
@@ -52,7 +77,9 @@ export default defineConfig({
       entry,
       formats: ['es']
     },
+    copyPublicDir: false,
     rollupOptions: {
+      plugins: [rollupPlugin()],
       external: ['react', 'react-dom'],
       output: {
         entryFileNames: ({ facadeModuleId }) => {

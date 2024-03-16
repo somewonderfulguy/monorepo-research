@@ -11,10 +11,13 @@ import {
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite-public.svg'
 // import viteLogo from './components/Button/assets/vite.svg'
-import './App.css'
-import './index.css'
 import Button from './components/Button'
 // import { ReactComponent as ReactLogo2 } from './assets/react.svg'
+
+import './App.css'
+import './index.css'
+import './styles/fonts.css'
+import styles from './App.module.css'
 
 const StringContext = createContext<string | undefined>(undefined)
 const StringDispatchContext = createContext<
@@ -97,7 +100,7 @@ function App({
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>
+      <h1 className={styles.title}>
         Vite + React +/- {result} + {testProp}
       </h1>
       <div className="card">
