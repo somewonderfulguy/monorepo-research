@@ -1,6 +1,6 @@
-import generateContext from '../generateContext'
+import createContextStore from '../createContextStore'
 
-const { Provider, useStoreValue, useStoreDispatch } = generateContext({
+const { Provider, useStoreValue, useStoreDispatch } = createContextStore({
   valueOne: 'Johnny Silverhand',
   valueTwo: 'Keanu Reeves'
 })
