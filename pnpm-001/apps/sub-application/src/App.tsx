@@ -1,22 +1,23 @@
 import useTest from 'shared/hooks/useTest'
 import { ReactNode, useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite-public.svg'
 // import viteLogo from './components/Button/assets/vite.svg'
 import Button from './components/Button'
 // import { ReactComponent as ReactLogo2 } from './assets/react.svg'
 import Lab from './components/Lab'
 import { Provider as LabProvider } from './components/Lab/contexts/fastStore'
 
+import viteLogo from '/assets/vite-public.svg'
+
 import './App.css'
 import './index.css'
 import './styles/fonts.css'
 import styles from './App.module.css'
 
-const AppWrapper = () => {
+const AppWrapper = (props: { testProp?: string; subComponent?: ReactNode }) => {
   return (
     <LabProvider>
-      <App />
+      <App {...props} />
     </LabProvider>
   )
 }
