@@ -1,4 +1,3 @@
-import useTest from 'shared/hooks/useTest'
 import { ReactNode, useState } from 'react'
 import reactLogo from './assets/react.svg'
 // import viteLogo from './components/Button/assets/vite.svg'
@@ -6,8 +5,13 @@ import Button from './components/Button'
 // import { ReactComponent as ReactLogo2 } from './assets/react.svg'
 import Lab from './components/Lab'
 import { Provider as LabProvider } from './components/Lab/contexts/fastStore'
+// import useTest from 'shared/hooks/useTest'
+import useResizeObserver from 'shared/hooks/useResizeObserver'
+import usePrevious from 'shared/hooks/usePrevious'
+import classNames from 'shared/utils/classNames'
 
 import viteLogo from '/assets/vite-public.svg'
+import './styles/reset.css'
 
 import './App.css'
 import './index.css'
@@ -30,10 +34,32 @@ function App({
   subComponent?: ReactNode
 }) {
   const [count, setCount] = useState(0)
-  const result = useTest()
+
+  const [width, setWidth] = useState<
+    'extra-wide' | 'wide' | 'medium' | 'narrow'
+  >('wide')
+  const prevWidth = usePrevious(width)
+  const divRef = useResizeObserver((bounds) => {
+    if (bounds.width > 1024) {
+      setWidth('extra-wide')
+    } else if (bounds.width > 768) {
+      setWidth('wide')
+    } else if (bounds.width > 320) {
+      setWidth('medium')
+    } else {
+      setWidth('narrow')
+    }
+  })
 
   return (
     <>
+      <div
+        ref={divRef}
+        style={{ width: '100%', marginBottom: 20 }}
+        className={classNames('test1', 'hello', 'world')}
+      >
+        {width}, was {prevWidth}
+      </div>
       <div>
         <div>
           <Lab />
@@ -48,9 +74,7 @@ function App({
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1 className={styles.title}>
-        Vite + React +/- {result} + {testProp}
-      </h1>
+      <h1 className={styles.title}>Vite + React +/- {testProp}</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

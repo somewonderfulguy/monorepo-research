@@ -1,17 +1,37 @@
 'use client'
 
 import Image from 'next/image'
-import useTest from 'shared/hooks/useTest'
-// import SubApp from 'sub-applicatio'
+import useResizeObserver from 'shared/hooks/useResizeObserver'
+import usePrevious from 'shared/hooks/usePrevious'
+import classNames from 'shared/utils/classNames'
 import styles from './page.module.css'
+import { useRef, useState } from 'react'
 
 export default function Home() {
-  const result = useTest()
+  const [width, setWidth] = useState<
+    'extra-wide' | 'wide' | 'medium' | 'narrow'
+  >('wide')
+  const prevWidth = usePrevious(width)
+  const divRef = useResizeObserver((bounds) => {
+    if (bounds.width > 1024) {
+      setWidth('extra-wide')
+    } else if (bounds.width > 768) {
+      setWidth('wide')
+    } else if (bounds.width > 320) {
+      setWidth('medium')
+    } else {
+      setWidth('narrow')
+    }
+  })
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <main className={classNames(styles.main, 'test1', 'hello')}>
+      <div className={styles.description} ref={divRef}>
         <p>
-          {result} Get started by editing&nbsp;
+          {width}, was {prevWidth}
+        </p>
+        <p>
+          Get started by editing&nbsp;
           <code className={styles.code}>src/app/page.tsx</code>
         </p>
         <div>

@@ -8,8 +8,6 @@ import {
 } from 'react'
 
 // TODO: Add SSR support
-// TODO: add schema validation for runtime type checking
-// TODO: test in non TS project (see how JSDoc works in that case)
 
 /**
  * @typedef {Object} ReturnValue
@@ -87,15 +85,9 @@ const createContextStore = <TStore,>(
   }
   if (displayName) Provider.displayName = displayName
 
-  /**
-   * @param {function} selector - function that selects the part of the store, e.g. `(store) => store.someValue`,
-   * if selector is not provided, the whole store is returned (good for stores as primitive values, e.g. `number` or `string`)
-   * @returns {*} selected part of the store
-   */
-  const useStoreValue = <TSelectorOutput,>(
-    selector: (store: TStore) => TSelectorOutput = (store) =>
-      store as unknown as TSelectorOutput
-  ): TSelectorOutput => {
+  const useStoreValue = <SelectorOutput,>(
+    selector: (store: TStore) => SelectorOutput
+  ): SelectorOutput => {
     const store = useContext(StoreValueContext)
     if (store === undefined) {
       throw new Error(
@@ -124,7 +116,12 @@ const createContextStore = <TStore,>(
   }
 
   return {
+    /** Description */
     Provider,
+    /**
+     * @param {function} selector - function that selects the part of the store, e.g. `(store) => store.someValue`
+     * @returns {*} selected part of the store
+     */
     useStoreValue,
     useStoreDispatch
   }
