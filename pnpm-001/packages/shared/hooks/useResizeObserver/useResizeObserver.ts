@@ -1,6 +1,6 @@
 import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 
-import throttle from '../../utils/throttle'
+import throttle from '~utils/throttle'
 
 type Bounds = { left: number; top: number; width: number; height: number }
 

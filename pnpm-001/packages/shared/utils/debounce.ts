@@ -1,7 +1,4 @@
-// import { AnyFunctionType } from 'types/common'
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type AnyFunctionType = (...args: any[]) => any
+import { AnyFunctionType } from '~types/common'
 
 const debounce = <TFunc extends AnyFunctionType>(
   func: TFunc,

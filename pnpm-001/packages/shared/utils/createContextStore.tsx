@@ -8,6 +8,7 @@ import {
 } from 'react'
 
 // TODO: Add SSR support
+// TODO: improve JSDoc
 
 /**
  * @typedef {Object} ReturnValue

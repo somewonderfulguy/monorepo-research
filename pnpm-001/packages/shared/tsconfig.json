@@ -18,7 +18,16 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Paths */
+    "baseUrl": ".",
+    "paths": {
+      /* keep in alphabetical order */
+      "~hooks/*": ["hooks/*"],
+      "~types/*": ["types/*"],
+      "~utils/*": ["utils/*"]
+    }
   },
   "include": ["vite-env.d.ts", "hooks", "utils"],
   "references": [{ "path": "./tsconfig.node.json" }]

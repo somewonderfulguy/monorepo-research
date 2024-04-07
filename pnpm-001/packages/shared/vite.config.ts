@@ -5,6 +5,13 @@ import path from 'path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 
+export const alias = {
+  // keep in alphabetical order
+  '~hooks': '/hooks',
+  '~types': '/types',
+  '~utils': '/utils'
+}
+
 // keep in alphabetical order as in file explorer
 const entriesData: Record<string, { code: string; css?: string }> = {
   // hooks
@@ -51,12 +58,7 @@ export default defineConfig({
         return 'assets'
       }
     }) as Plugin,
-    dts({
-      compilerOptions: {
-        declaration: true,
-        removeComments: false
-      }
-    })
+    dts()
   ],
   build: {
     target: 'esnext',
@@ -108,5 +110,8 @@ export default defineConfig({
         }
       }
     }
+  },
+  resolve: {
+    alias
   }
 })
