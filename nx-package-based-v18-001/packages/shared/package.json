@@ -1,19 +1,42 @@
 {
   "name": "shared",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "rimraf dist && tsc"
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./hooks/usePrevious": "./dist/hooks/usePrevious/usePrevious.js",
+    "./hooks/useResizeObserver": "./dist/hooks/useResizeObserver/useResizeObserver.js",
+    "./utils/classNames": "./dist/utils/classNames.js",
+    "./utils/createContextStore": "./dist/utils/createContextStore.js",
+    "./utils/debounce": "./dist/utils/debounce.js",
+    "./utils/throttle": "./dist/utils/throttle.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^18.2.0"
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && nx build",
+    "lint": "nx lint --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "nx preview"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "rimraf": "^5.0.5",
-    "typescript": "^5.2.2"
+    "@laynezh/vite-plugin-lib-assets": "^0.5.21",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4",
+    "vite-plugin-dts": "^3.7.3",
+    "vite-plugin-lib-inject-css": "^2.0.0"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }

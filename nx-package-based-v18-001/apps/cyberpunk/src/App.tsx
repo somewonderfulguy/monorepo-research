@@ -1,20 +1,15 @@
-import useTest from 'shared/hooks/useTest'
-// TODO: resolve types
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import SubApp from 'sub-application/dist/index.js'
+import SubApp from 'sub-application';
+import Button from 'sub-application/components/Button';
 
-import './App.css'
+import './App.css';
 
 function App() {
-  const result = useTest()
-
   return (
     <>
-      {result} hey
-      <SubApp />
+      <Button>Hello</Button>
+      <SubApp testProp="WOOOOOW, COOOL" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
