@@ -1,6 +1,5 @@
 import { HTMLAttributes } from 'react'
 
-import viteLogo from '/assets/vite-public.svg'
 import tsImg from './assets/ts.png'
 import viteImg from './assets/vite.svg'
 import styles from './Button.module.css'
@@ -11,13 +10,7 @@ const Button = ({ children, ...props }: HTMLAttributes<HTMLButtonElement>) => (
     <button {...props} className={`${styles.button} my-vite-button`}>
       <img src={tsImg} alt="TypeScript" />
       <img src={viteImg} alt="Vite" />
-      {children}{' '}
-      <img
-        src={viteLogo}
-        className="logo"
-        alt="Vite logo"
-        style={{ padding: 0 }}
-      />
+      {children}
     </button>
   </div>
 )

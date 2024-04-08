@@ -5,7 +5,7 @@
   "type": "module",
   "exports": {
     ".": "./dist/App.js",
-    "./components/Button": "./dist/components/Button/Button.js",
+    "./components/Button": "./src/components/Button/index.ts",
     "./styles/reset.css": "./dist/styles/reset.css",
     "./types": "./dist/types/index.d.ts",
     "./utils/log": "./dist/utils/log.js"
