@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "exports": {
-    "./hooks/usePrevious": "./dist/hooks/usePrevious/usePrevious.js",
-    "./hooks/useResizeObserver": "./dist/hooks/useResizeObserver/useResizeObserver.js",
-    "./utils/classNames": "./dist/utils/classNames.js",
-    "./utils/createContextStore": "./dist/utils/createContextStore.js",
+    "./hooks/useMutationObserver": "./hooks/useMutationObserver/useMutationObserver.ts",
+    "./hooks/usePrevious": "./hooks/usePrevious/usePrevious.ts",
+    "./hooks/useResizeObserver": "./hooks/useResizeObserver/useResizeObserver.ts",
+    "./utils/classNames": "./utils/classNames.ts",
+    "./utils/createContextStore": "./utils/createContextStore.tsx",
     "./utils/debounce": "./dist/utils/debounce.js",
     "./utils/throttle": "./dist/utils/throttle.js"
   },
