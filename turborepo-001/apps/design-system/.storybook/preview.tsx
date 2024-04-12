@@ -45,25 +45,25 @@ const multiselect: Addon = {
         queryKey: 'themeStorybook',
         defaultValue: 'yellow',
         localStorageKey: themeStorybookKey,
-        onChange: function (value, storybookApi) {
+        onChange: `(value, storybookApi) => {
           storybookApi.emit('changeThemeStorybook', value)
           return value
-        },
+        }`,
         options: [
           {
             title: 'Yellow',
             value: 'yellow',
-            left: '🟡'
+            icon: '🟡'
           },
           {
             title: 'Dark Red',
             value: 'darkRed',
-            left: '🔴'
+            icon: '🔴'
           },
           {
             title: 'Dark',
             value: 'dark',
-            left: '⚫'
+            icon: '⚫'
           }
         ]
       }
@@ -90,7 +90,7 @@ const multiselect: Addon = {
           {
             title: 'Theme',
             value: 'theme',
-            left: (
+            icon: (
               <svg {...svgPrioritySharedProps}>
                 <path
                   key={1}
@@ -110,7 +110,7 @@ const multiselect: Addon = {
           {
             title: 'Language',
             value: 'lang',
-            left: (
+            icon: (
               <svg
                 {...svgPrioritySharedProps}
                 strokeWidth="2"
@@ -137,15 +137,15 @@ const multiselect: Addon = {
         title: 'Orientation',
         defaultValue: 'vertical',
         localStorageKey: orientationKey,
-        onChange: function (value, storybookApi) {
+        onChange: `(value, storybookApi) => {
           storybookApi.emit('changeOrientation', value)
           return value
-        },
+        }`,
         options: [
           {
             title: 'Horizontal',
             value: 'horizontal',
-            left: (
+            icon: (
               <svg
                 {...svgSharedProps2}
                 fill="currentColor"
@@ -159,7 +159,7 @@ const multiselect: Addon = {
           {
             title: 'Vertical',
             value: 'vertical',
-            left: (
+            icon: (
               <svg
                 {...svgSharedProps2}
                 fill="currentColor"
@@ -178,30 +178,30 @@ const multiselect: Addon = {
         queryKey: 'theme',
         defaultValues: ['yellow'],
         localStorageKey: themeKey,
-        onChange: function (value, storybookApi) {
+        onChange: `(value, storybookApi) => {
           storybookApi.emit('changeTheme', value)
           return value
-        },
+        }`,
         options: [
           {
             title: 'Yellow',
             value: 'yellow',
-            left: '🟡'
+            icon: '🟡'
           },
           {
             title: 'Dark Red',
             value: 'darkRed',
-            left: '🔴'
+            icon: '🔴'
           },
           {
             title: 'Dark',
             value: 'dark',
-            left: '⚫'
+            icon: '⚫'
           },
           {
             title: 'White on black',
             value: 'whiteOnBlack',
-            left: '⚪'
+            icon: '⚪'
           }
         ]
       },
@@ -214,17 +214,17 @@ const multiselect: Addon = {
           {
             title: 'English',
             value: 'en',
-            left: '🇬🇧'
+            icon: '🇬🇧'
           },
           {
             title: 'Polish',
             value: 'pl',
-            left: '🇵🇱'
+            icon: '🇵🇱'
           },
           {
             title: 'Ukrainian',
             value: 'ua',
-            left: '🇺🇦'
+            icon: '🇺🇦'
           }
         ]
       }

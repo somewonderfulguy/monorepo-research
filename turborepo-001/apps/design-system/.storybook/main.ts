@@ -18,7 +18,8 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-interactions'),
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-mdx-gfm'),
-    getAbsolutePath('storybook-addon-multiselect')
+    getAbsolutePath('storybook-addon-multiselect'),
+    '@chromatic-dom/storybook'
   ],
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),
