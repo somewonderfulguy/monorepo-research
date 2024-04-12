@@ -1,13 +1,11 @@
-// import SubApp from 'sub-application';
-import Button from 'sub-application/components/Button';
+import SubApp from '@repo/player';
 
 import './App.css';
 
 function App() {
   return (
     <>
-      <Button>Hello</Button>
-      {/* <SubApp testProp="WOOOOOW, COOOL" /> */}
+      <SubApp testProp="WOOOOOW, COOOL" />
     </>
   );
 }

@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { SetupWorker } from 'msw';
 
-import 'sub-application/styles/reset.css';
+import '@repo/player/styles/reset.css';
 
 import App from './App';
 

@@ -5,7 +5,7 @@ pnpm --filter cyberpunk dev
 pnpm --filter cyberpunk build
 pnpm --filter cyberpunk preview
 pnpm add shared --filter cyberpunk --workspace
-pnpm add vite-plugin-dts --filter sub-application -D
+pnpm add vite-plugin-dts --filter player -D
 
 # npx nx <target> <project>
 

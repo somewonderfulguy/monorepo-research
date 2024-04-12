@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!, {
-  identifierPrefix: 'sub-application-'
+  identifierPrefix: 'player-'
 }).render(
   <React.StrictMode>
     <App />
