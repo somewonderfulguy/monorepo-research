@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useState } from 'react'
 import { useTabsContext } from '@reach/tabs'
 
-import usePrevious from 'shared/hooks/usePrevious'
+import usePrevious from '@repo/shared/hooks/usePrevious'
 
 export const useFadeInOutAnimation = (divElem: RefObject<HTMLDivElement>) => {
   const { selectedIndex } = useTabsContext()

@@ -5,7 +5,7 @@ import {
 } from '@reach/tabs'
 import { animated } from 'react-spring'
 
-import useResizeObserver from 'shared/hooks/useResizeObserver'
+import useResizeObserver from '@repo/shared/hooks/useResizeObserver'
 
 import { IndicatorPositionProvider, useTabsInternalValue } from './contexts'
 import { useIndicatorPosition, useTrackIndicatorPosition } from './hooks'

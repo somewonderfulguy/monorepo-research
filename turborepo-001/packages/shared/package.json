@@ -1,5 +1,5 @@
 {
-  "name": "shared",
+  "name": "@repo/shared",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,11 +9,10 @@
     "./hooks/useResizeObserver": "./hooks/useResizeObserver/useResizeObserver.ts",
     "./utils/classNames": "./utils/classNames.ts",
     "./utils/createContextStore": "./utils/createContextStore.tsx",
-    "./utils/debounce": "./dist/utils/debounce.js",
-    "./utils/throttle": "./dist/utils/throttle.js"
+    "./utils/debounce": "./utils/debounce.ts",
+    "./utils/throttle": "./utils/throttle.ts"
   },
   "scripts": {
-    "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

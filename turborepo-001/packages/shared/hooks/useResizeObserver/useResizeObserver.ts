@@ -1,25 +1,24 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 
-import throttle from '~utils/throttle'
+import throttle from '../../utils/throttle'
 
 type Bounds = { left: number; top: number; width: number; height: number }
 
 const useResizeObserver = <TElement extends HTMLElement = HTMLDivElement>(
   callback: (bounds: Bounds) => void,
-  throttleDelay = 0,
-  // @ts-ignore
-  someProp?: unknown
+  throttleDelay = 0
 ) => {
   const elemRef = useRef<TElement>(null)
 
-  const observer = throttle(([entry]) => {
-    const newBounds = Array.isArray(entry)
-      ? entry[0].contentRect
-      : entry.contentRect
-    callback(newBounds)
-  }, throttleDelay)
+  const observer = throttle(
+    (([entry]) => {
+      const newBounds = Array.isArray(entry)
+        ? entry[0].contentRect
+        : entry.contentRect
+      callback(newBounds)
+    }) as ResizeObserverCallback,
+    throttleDelay
+  )
   const [resizeObserver] = useState(() => new ResizeObserver(observer))
   const disconnect = useCallback(
     () => resizeObserver.disconnect(),

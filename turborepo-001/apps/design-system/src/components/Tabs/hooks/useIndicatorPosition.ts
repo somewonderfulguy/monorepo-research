@@ -2,7 +2,7 @@ import { RefObject, useLayoutEffect, useRef } from 'react'
 import { useTabsContext } from '@reach/tabs'
 import { useSpring } from 'react-spring'
 
-import usePrevious from 'shared/hooks/usePrevious'
+import usePrevious from '@repo/shared/hooks/usePrevious'
 
 import { useTabsInternalValue } from '../contexts/tabsInternalContext'
 import { useIndicatorPositionDispatch } from '../contexts'
@@ -153,7 +153,7 @@ export const useIndicatorPosition = (
 
     // mouse hover logic
     let prevHoverIndex = selectedIndex
-    const mouseEnterCallbacks = tabs.map((hoverTab, _hoverIndex) => () => {
+    const mouseEnterCallbacks = tabs.map((_hoverTab, _hoverIndex) => () => {
       hoverIndex.current = _hoverIndex
       if (prevHoverIndex === _hoverIndex) return
       performTransition(prevHoverIndex, _hoverIndex)

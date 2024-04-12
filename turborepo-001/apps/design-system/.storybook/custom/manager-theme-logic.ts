@@ -1,3 +1,5 @@
+// TODO: refactor
+
 import { addons } from '@storybook/addons'
 
 import { Theme } from '../../src/types/theme'
@@ -7,6 +9,7 @@ import {
   themeStorybookKey
 } from '../../src/constants'
 
+import objectObserver from './objectObserver'
 import * as themes from '../themes'
 
 type Orientation = 'horizontal' | 'vertical'
@@ -57,25 +60,7 @@ const initTopRightClass =
     ? topRightClasses[initialTheme[initialTheme.length - 1]]
     : topRightClasses[initialTheme[0]]
 
-// initialization
-const initialThemeStorybook =
-  localStorage.getItem(themeStorybookKey) || 'yellow'
-addons.setConfig({
-  theme: themes[initialThemeStorybook]
-})
-window.document.body.classList.add(initialThemeStorybook)
 window.document.body.classList.add(initTopRightClass || 'topRightYellow')
-// make sure storybook theme in local storage (needed for preview (`preview-theme-logic.ts`)))
-localStorage.setItem(themeStorybookKey, initialThemeStorybook)
-
-// on storybook theme change
-addons.getChannel().on('changeThemeStorybook', (theme: Theme) => {
-  addons.setConfig({
-    theme: themes[theme]
-  })
-  window.document.body.classList.remove('dark', 'darkRed', 'yellow')
-  window.document.body.classList.add(theme)
-})
 
 // on orientation/theme change (set style that will help to style top right corner)
 const performTopRightClassChange = (
@@ -93,7 +78,7 @@ const performTopRightClassChange = (
     )
   }
 }
-addons.getChannel().on('changeOrientation', (orientation: Orientation) => {
+const changeOrientation = (orientation: Orientation) => {
   const localStorageThemes = localStorage.getItem(themeKey)?.split(',') as
     | Theme[]
     | undefined
@@ -111,9 +96,9 @@ addons.getChannel().on('changeOrientation', (orientation: Orientation) => {
 
   const themes = (localStorageThemes || urlThemes || ['yellow']) as Theme[]
   performTopRightClassChange(themes, orientation)
-})
+}
 
-addons.getChannel().on('changeTheme', (themes: Theme[]) => {
+const changeTheme = (themes: Theme[]) => {
   const localStorageOrientation = localStorage.getItem(orientationKey)
   const urlOrientation = new URLSearchParams(document.location.search)
     .get('globals')
@@ -129,8 +114,18 @@ addons.getChannel().on('changeTheme', (themes: Theme[]) => {
     urlOrientation ||
     'horizontal') as Orientation
   performTopRightClassChange(themes, orientation)
+}
+
+objectObserver(window.localStorage, ['setItem'], (method, key, ...args) => {
+  const arg = args[0] as string
+  if (key === 'theme') {
+    changeTheme(arg.split(',') as Theme[])
+  } else if (key === 'orientation') {
+    changeOrientation(arg as Orientation)
+  }
 })
 
+// TODO: move to separate file
 // yellow bottom border on top panel (dark theme)
 document.addEventListener('DOMContentLoaded', async () => {
   // wait for storybook to initialize (needed in Chrome, FF works without it)

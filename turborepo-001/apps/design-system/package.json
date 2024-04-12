@@ -16,7 +16,7 @@
   "dependencies": {
     "@reach/tabs": "^0.18.0",
     "react-spring": "^9.7.3",
-    "shared": "workspace:*"
+    "@repo/shared": "workspace:*"
   },
   "peerDependencies": {
     "augmented-ui": "^2.0.0",
@@ -54,6 +54,7 @@
     "typescript": "^5.2.2",
     "vite": "^5.1.6",
     "vite-plugin-dts": "^3.7.3",
-    "vite-plugin-lib-inject-css": "^2.0.0"
+    "vite-plugin-lib-inject-css": "^2.0.0",
+    "vite-plugin-svgr": "^4.2.0"
   }
 }

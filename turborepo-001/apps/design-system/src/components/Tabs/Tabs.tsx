@@ -5,7 +5,7 @@ import {
   TabProps
 } from '@reach/tabs'
 
-import classNames from 'shared/utils/classNames'
+import classNames from '@repo/shared/utils/classNames'
 
 import {
   TabsInternalProvider,

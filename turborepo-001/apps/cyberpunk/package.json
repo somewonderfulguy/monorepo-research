@@ -25,7 +25,7 @@
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
     "react-icons": "^5.0.1",
-    "shared": "workspace:*",
+    "@repo/shared": "workspace:*",
     "sub-application": "workspace:*"
   },
   "devDependencies": {

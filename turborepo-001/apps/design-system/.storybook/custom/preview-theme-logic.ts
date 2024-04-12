@@ -20,6 +20,7 @@ const timer = setInterval(() => {
   }
 }, 60)
 
+// TODO: consider using `proxyObserveObject` to listen to `localStorage` changes
 // listen to `localStorage` (theme) changes
 window.addEventListener('storage', () => {
   const localStorageTheme = localStorage.getItem(

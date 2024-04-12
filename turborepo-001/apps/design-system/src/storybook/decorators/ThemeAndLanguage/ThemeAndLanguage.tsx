@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react'
 import type { Decorator } from '@storybook/react'
 
-import classNames from 'shared/utils/classNames'
+import classNames from '@repo/shared/utils/classNames'
 
 import { ThemeProvider } from '../../../contexts/themeContext'
 import { Theme, ThemeStorybook } from '../../../types/theme'

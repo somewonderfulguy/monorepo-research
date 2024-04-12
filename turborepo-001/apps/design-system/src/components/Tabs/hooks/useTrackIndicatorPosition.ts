@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 
-import useMutationObserver from 'shared/hooks/useMutationObserver'
+import useMutationObserver from '@repo/shared/hooks/useMutationObserver'
 
 import { useIndicatorPositionDispatch } from '../contexts'
 

@@ -4,6 +4,7 @@ import dts from 'vite-plugin-dts'
 import path from 'path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
+import svgr from 'vite-plugin-svgr'
 
 // import { copyPublicDirDeps } from './vite/copyPublicDirDeps'
 
@@ -38,7 +39,8 @@ export default defineConfig({
         return 'assets'
       }
     }) as Plugin,
-    dts()
+    dts(),
+    svgr()
   ],
   build: {
     target: 'esnext',

@@ -1,4 +1,4 @@
-import createContextStore from 'shared/utils/createContextStore'
+import createContextStore from '@repo/shared/utils/createContextStore'
 
 import type { TabsStyle } from '../Tabs'
 import { useMemo } from 'react'

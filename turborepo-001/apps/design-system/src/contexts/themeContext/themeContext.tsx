@@ -8,7 +8,7 @@ import {
   useState
 } from 'react'
 
-import classNames from 'shared/utils/classNames'
+import classNames from '@repo/shared/utils/classNames'
 
 import { Theme } from '../../types/theme'
 

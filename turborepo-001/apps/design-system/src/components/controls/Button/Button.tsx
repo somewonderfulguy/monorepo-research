@@ -1,51 +1,27 @@
-import './Button.css'
+import { HTMLProps } from 'react'
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large'
-  /**
-   * Button contents
-   */
-  label: string
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void
+import PreviewIcon from './assets/eye.svg?react'
+import styles from './Button.module.css'
+
+export type ButtonProps = HTMLProps<HTMLButtonElement> & {
+  type?: 'button' | 'submit' | 'reset'
+  isPreview?: boolean
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
+const Button = ({
+  children,
+  isPreview,
+  type = 'button',
   ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? 'storybook-button--primary'
-    : 'storybook-button--secondary'
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(
-        ' '
-      )}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  )
-}
+}: ButtonProps) => (
+  <button
+    {...props}
+    className={styles.button}
+    data-augmented-ui="bl-clip"
+    type={type}
+  >
+    {isPreview && <PreviewIcon />} {children}
+  </button>
+)
+
+export default Button

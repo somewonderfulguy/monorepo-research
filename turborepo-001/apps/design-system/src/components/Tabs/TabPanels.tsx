@@ -2,7 +2,7 @@ import { forwardRef, HTMLAttributes, useEffect, useRef, useState } from 'react'
 import { TabPanels as ReachTabPanels, TabPanelsProps } from '@reach/tabs'
 import { animated, useSpring } from 'react-spring'
 
-import useResizeObserver from 'shared/hooks/useResizeObserver'
+import useResizeObserver from '@repo/shared/hooks/useResizeObserver'
 
 const TabPanels = forwardRef<
   HTMLDivElement,

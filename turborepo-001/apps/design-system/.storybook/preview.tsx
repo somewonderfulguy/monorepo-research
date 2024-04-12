@@ -3,7 +3,7 @@ import type { Preview } from '@storybook/react'
 import { Addon } from 'storybook-addon-multiselect'
 import 'augmented-ui/augmented-ui.min.css'
 
-// import ThemeAndLanguage from '../src/storybook/decorators/ThemeAndLanguage'
+import ThemeAndLanguage from '../src/storybook/decorators/ThemeAndLanguage'
 import { orientationKey, themeKey, themeStorybookKey } from '../src/constants'
 
 import './custom/preview-theme-logic'
@@ -45,10 +45,6 @@ const multiselect: Addon = {
         queryKey: 'themeStorybook',
         defaultValue: 'yellow',
         localStorageKey: themeStorybookKey,
-        onChange: `(value, storybookApi) => {
-          storybookApi.emit('changeThemeStorybook', value)
-          return value
-        }`,
         options: [
           {
             title: 'Yellow',
@@ -137,10 +133,6 @@ const multiselect: Addon = {
         title: 'Orientation',
         defaultValue: 'vertical',
         localStorageKey: orientationKey,
-        onChange: `(value, storybookApi) => {
-          storybookApi.emit('changeOrientation', value)
-          return value
-        }`,
         options: [
           {
             title: 'Horizontal',
@@ -178,10 +170,6 @@ const multiselect: Addon = {
         queryKey: 'theme',
         defaultValues: ['yellow'],
         localStorageKey: themeKey,
-        onChange: `(value, storybookApi) => {
-          storybookApi.emit('changeTheme', value)
-          return value
-        }`,
         options: [
           {
             title: 'Yellow',
@@ -252,8 +240,8 @@ const preview: Preview = {
   },
   globals: {
     multiselect: {}
-  }
-  // decorators: [ThemeAndLanguage]
+  },
+  decorators: [ThemeAndLanguage]
 }
 
 export default preview
