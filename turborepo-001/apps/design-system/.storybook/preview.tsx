@@ -8,10 +8,9 @@ import { orientationKey, themeKey, themeStorybookKey } from '../src/constants'
 
 import './custom/preview-theme-logic'
 
-// TODO
 import '../src/styles/fonts.css'
+import '../src/styles/reset.css'
 import '../src/storybook/styles/storybook.css'
-// TODO: add reset.css
 
 const svgSharedProps2 = {
   stroke: 'currentColor',

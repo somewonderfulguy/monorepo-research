@@ -2,8 +2,6 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { SetupWorker } from 'msw';
 
-import '@repo/player/styles/reset.css';
-
 import App from './App';
 
 const launchOffline = async () => {

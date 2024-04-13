@@ -1,6 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+
+import '@repo/design-system/styles/reset.css'
+import '@repo/design-system/styles/fonts.css'
+
+import App from './components/App'
 
 ReactDOM.createRoot(document.getElementById('root')!, {
   identifierPrefix: 'player-'

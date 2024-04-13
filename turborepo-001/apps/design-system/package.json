@@ -1,16 +1,19 @@
 {
-  "name": "design-system",
+  "name": "@repo/design-system",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "author": "Dmitriy Yastrebov",
   "description": "Design system & component library",
+  "exports": {
+    "./styles/*": "./src/styles/*"
+  },
   "scripts": {
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "check-types": "tsc",
     "preview": "vite preview",
-    "dev": "storybook dev -p 6006",
+    "dev": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
   "dependencies": {

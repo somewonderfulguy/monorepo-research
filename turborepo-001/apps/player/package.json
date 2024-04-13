@@ -4,15 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "exports": {
-    ".": "./dist/App.js",
-    "./components/Button": "./src/components/Button/index.ts",
-    "./styles/reset.css": "./dist/styles/reset.css",
-    "./types": "./dist/types/index.d.ts",
-    "./utils/log": "./dist/utils/log.js"
+    ".": "./src/components/App/App.tsx"
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && node ./scripts/postLibBuild.cjs",
@@ -22,6 +15,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "@repo/design-system": "workspace:^",
     "@repo/shared": "workspace:^"
   },
   "devDependencies": {

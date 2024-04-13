@@ -13,6 +13,9 @@ importers:
       '@radix-ui/react-slider':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@18.2.24)(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
+      '@repo/design-system':
+        specifier: workspace:*
+        version: link:../design-system
       '@repo/player':
         specifier: workspace:*
         version: link:../player
@@ -240,6 +243,9 @@ importers:
 
   apps/player:
     dependencies:
+      '@repo/design-system':
+        specifier: workspace:^
+        version: link:../design-system
       '@repo/shared':
         specifier: workspace:^
         version: link:../../packages/shared

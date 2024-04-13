@@ -1,11 +1,12 @@
-import SubApp from '@repo/player';
+import Player from '@repo/player';
 
-import './App.css';
+import '@repo/design-system/styles/reset.css';
+import '@repo/design-system/styles/fonts.css';
 
 function App() {
   return (
     <>
-      <SubApp testProp="WOOOOOW, COOOL" />
+      <Player />
     </>
   );
 }
