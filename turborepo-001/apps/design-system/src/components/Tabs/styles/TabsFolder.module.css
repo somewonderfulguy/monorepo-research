@@ -7,7 +7,7 @@
   width: 630px;
 
   .tabListContainer,
-  [data-reach-tab-list] {
+  div[data-reach-tab-list] {
     width: 100%;
     gap: 3px;
   }

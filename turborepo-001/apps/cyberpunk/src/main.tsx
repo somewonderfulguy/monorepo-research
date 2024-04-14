@@ -2,7 +2,9 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { SetupWorker } from 'msw';
 
-import App from './App';
+import CyberpunkApp from './components/CyberpunkApp';
+
+import './styles/global.css';
 
 const launchOffline = async () => {
   if (import.meta.env.VITE_OFFLINE !== 'true') {
@@ -24,7 +26,7 @@ launchOffline().then(() =>
     identifierPrefix: 'cyberpunk-'
   }).render(
     <StrictMode>
-      <App />
+      <CyberpunkApp />
     </StrictMode>
   )
 );

@@ -6,6 +6,7 @@
   "author": "Dmitriy Yastrebov",
   "description": "Design system & component library",
   "exports": {
+    "./Tabs": "./src/components/Tabs/Tabs.tsx",
     "./styles/*": "./src/styles/*"
   },
   "scripts": {

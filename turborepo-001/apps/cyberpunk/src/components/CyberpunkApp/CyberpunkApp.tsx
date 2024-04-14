@@ -3,7 +3,7 @@ import Player from '@repo/player';
 import '@repo/design-system/styles/reset.css';
 import '@repo/design-system/styles/fonts.css';
 
-function App() {
+function CyberpunkApp() {
   return (
     <>
       <Player />
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default CyberpunkApp;

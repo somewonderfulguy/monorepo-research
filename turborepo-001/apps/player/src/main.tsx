@@ -4,12 +4,14 @@ import ReactDOM from 'react-dom/client'
 import '@repo/design-system/styles/reset.css'
 import '@repo/design-system/styles/fonts.css'
 
-import App from './components/App'
+import PlayerApp from './components/PlayerApp'
+
+import './styles/devMode.css'
 
 ReactDOM.createRoot(document.getElementById('root')!, {
-  identifierPrefix: 'player-'
+  identifierPrefix: 'player-app-'
 }).render(
   <React.StrictMode>
-    <App />
+    <PlayerApp />
   </React.StrictMode>
 )

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "exports": {
-    ".": "./src/components/App/App.tsx"
+    ".": "./src/components/PlayerApp/PlayerApp.tsx"
   },
   "scripts": {
     "dev": "vite",
