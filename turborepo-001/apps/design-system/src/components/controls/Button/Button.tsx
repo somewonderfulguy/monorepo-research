@@ -1,27 +1,38 @@
 import { HTMLProps } from 'react'
 
-import PreviewIcon from './assets/eye.svg?react'
 import styles from './Button.module.css'
+// import Play from './play.svg?react'
 
-export type ButtonProps = HTMLProps<HTMLButtonElement> & {
+export type Props = HTMLProps<HTMLButtonElement> & {
   type?: 'button' | 'submit' | 'reset'
-  isPreview?: boolean
+  buttonStyle?: 'filled' | 'outlined'
+  cutTopLeftCorner?: boolean
+  cutTopRightCorner?: boolean
+  cutBottomLeftCorner?: boolean
+  cutBottomRightCorner?: boolean
 }
 
 const Button = ({
-  children,
-  isPreview,
   type = 'button',
+  cutTopLeftCorner,
+  cutTopRightCorner,
+  cutBottomLeftCorner,
+  cutBottomRightCorner,
+  className = '',
   ...props
-}: ButtonProps) => (
-  <button
-    {...props}
-    className={styles.button}
-    data-augmented-ui="bl-clip"
-    type={type}
-  >
-    {isPreview && <PreviewIcon />} {children}
-  </button>
-)
+}: Props) => {
+  return (
+    <>
+      <div className={styles.buttonWrapper} data-augmented-ui="bl-clip">
+        <button
+          type={type}
+          {...props}
+          className={`${styles.button} ${className}`}
+        />
+      </div>
+      {/* <Play /> */}
+    </>
+  )
+}
 
 export default Button
