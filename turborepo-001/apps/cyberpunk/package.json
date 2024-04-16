@@ -17,11 +17,12 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "@repo/design-system": "workspace:*",
+    "@repo/player": "workspace:*",
     "@repo/shared": "workspace:*",
-    "@repo/player": "workspace:*"
+    "augmented-ui": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.6.17",

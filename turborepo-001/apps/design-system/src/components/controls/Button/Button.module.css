@@ -1,7 +1,10 @@
 .buttonWrapper {
   width: fit-content;
 
-  --aug-bl: 9px;
+  --aug-bl: 18px;
+  --aug-br: 18px;
+  --aug-tl: 18px;
+  --aug-tr: 18px;
 }
 
 .button {
@@ -9,14 +12,44 @@
   cursor: pointer;
 
   height: 48px;
-  /* width: 232px; */
-
-  width: 74px;
+  width: 232px;
 
   text-align: center;
+  text-transform: uppercase;
 
-  color: #000;
-  background-color: #fff;
+  font-family: 'Blender Pro Bold', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+
+  color: var(--cb-text-color);
+  background-color: var(--cb-accent-color);
+
+  transition: background-color 0.2s, color 0.2s, opacity 0.2s;
+  &:hover {
+    background-color: var(--cb-accent-color-lighter);
+  }
+  &:active {
+    color: var(--cb-text-color-inverted);
+    background-color: var(--cb-accent-color-alt);
+  }
+
+  :global(.cyberpunk-ui-theme-white-on-black) & {
+    color: var(--cb-text-color-inverted);
+    background-color: var(--cb-secondary-color);
+
+    &:hover {
+      background-color: var(--cb-accent-color);
+    }
+    &:active {
+      color: var(--cb-text-color-inverted);
+      background-color: var(--cb-accent-color-alt);
+    }
+  }
+
+  > * {
+    display: block;
+    margin: 0 auto;
+  }
 
   &[disabled] {
     cursor: not-allowed;

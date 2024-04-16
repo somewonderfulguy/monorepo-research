@@ -14,7 +14,7 @@ import { Theme } from '../../types/theme'
 
 import styles from './themeContext.module.css'
 
-// TODO: switch to fast context (?)
+// TODO: switch to fast context
 const ThemeStateContext = createContext<Theme | undefined>(undefined)
 ThemeStateContext.displayName = 'ThemeStateContext'
 
@@ -75,4 +75,5 @@ const useThemeDispatch = () => {
   return context
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { ThemeProvider, useThemeState, useThemeDispatch }

@@ -28,7 +28,9 @@
       left: 50%;
       transform: translate(-50%, -50%);
 
-      :global(.cyberpunk-ui-theme-white-on-black) &,
+      :global(.cyberpunk-ui-theme-white-on-black) & {
+        --aug-border-bg: var(--cb-accent-color-aggressive);
+      }
       :global(.cyberpunk-ui-theme-dark) & {
         --aug-border-bg: var(--cb-accent-color-alt);
       }

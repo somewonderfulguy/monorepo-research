@@ -6,6 +6,9 @@
   "author": "Dmitriy Yastrebov",
   "description": "Design system & component library",
   "exports": {
+    "./assets/*": "./src/assets/*",
+    "./contexts/themeContext": "./src/contexts/themeContext/index.ts",
+    "./controls/Button": "./src/components/controls/Button/index.ts",
     "./Tabs": "./src/components/Tabs/Tabs.tsx",
     "./styles/*": "./src/styles/*"
   },

@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { SetupWorker } from 'msw';
+import 'augmented-ui/augmented-ui.min.css';
 
 import CyberpunkApp from './components/CyberpunkApp';
 

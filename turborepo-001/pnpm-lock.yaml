@@ -19,6 +19,9 @@ importers:
       '@repo/shared':
         specifier: workspace:*
         version: link:../../packages/shared
+      augmented-ui:
+        specifier: ^2.0.0
+        version: 2.0.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -231,6 +234,9 @@ importers:
       '@repo/shared':
         specifier: workspace:^
         version: link:../../packages/shared
+      augmented-ui:
+        specifier: ^2.0.0
+        version: 2.0.0
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -286,6 +292,9 @@ importers:
       vite-plugin-lib-inject-css:
         specifier: ^2.0.0
         version: 2.0.1(vite@5.2.8)
+      vite-plugin-svgr:
+        specifier: ^4.2.0
+        version: 4.2.0(typescript@5.4.4)(vite@5.2.8)
 
   packages/shared:
     dependencies:
@@ -6663,7 +6672,6 @@ packages:
 
   /augmented-ui@2.0.0:
     resolution: {integrity: sha512-5hp6zqzNwn7mhhdgZq5kOqzK5el642ubKJNR++5Desou9RnMuxQ0MtCzxAu/dkoXn8wmQoqzwagGmVY4La7NjA==}
-    dev: true
 
   /available-typed-arrays@1.0.7:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}

@@ -14,6 +14,7 @@
   --cb-yellow-base: 58, 100%, 48%;
   --cb-yellow-alt-base: 73, 100%, 68%;
   --cb-turquoise-base: 184, 100%, 50%;
+  --cb-turquoise-lighter-base: 180, 100%, 50%;
   --cb-red-vivid-base: 349, 99%, 50%;
   --cb-red-mid-base: 2, 71%, 56%;
   --cb-red-base: 3, 100%, 67%;
@@ -28,6 +29,7 @@
   --cb-red-mid: hsl(var(--cb-red-mid-base));
   --cb-red-vivid: hsl(var(--cb-red-vivid-base));
   --cb-turquoise: hsl(var(--cb-turquoise-base));
+  --cb-turquoise-lighter: hsl(var(--cb-turquoise-lighter-base));
   --cb-black: hsl(var(--cb-black-base));
   --cb-white: hsl(var(--cb-white-base));
   --cb-midnight-navy: hsl(var(--cb-midnight-navy-base));
@@ -62,20 +64,24 @@
   --cb-turquoise-transparent: hsla(184, 100%, 50%, 0.12);
 }
 
+/* hsl(180, 100%, 50%) */
+
 .theme:global(.cyberpunk-ui-theme-yellow) {
   --cb-base: var(--cb-yellow-base);
   --cb-base-secondary: var(--cb-black-base);
   --cb-base-accent: var(--cb-turquoise-base);
+  --cb-accent-lighter: var(--cb-turquoise-lighter-base);
   --cb-base-accent-alt: var(--cb-red-vivid-base);
 
   --cb-primary-color: var(--cb-yellow-main);
   --cb-secondary-color: var(--cb-black);
   --cb-accent-color: var(--cb-turquoise);
+  --cb-accent-color-lighter: var(--cb-turquoise-lighter);
   --cb-accent-color-alt: var(--cb-red-vivid);
 
   --cb-background-color: var(--cb-yellow-main);
-
   --cb-text-color: var(--cb-black);
+  --cb-text-color-inverted: var(--cb-white);
 }
 
 .theme:global(.cyberpunk-ui-theme-dark-red) {
@@ -113,15 +119,18 @@
 .theme:global(.cyberpunk-ui-theme-white-on-black) {
   --cb-base: var(--cb-black-base);
   --cb-base-secondary: var(--cb-white-base);
-  --cb-base-accent: var(--cb-yellow-base);
-  --cb-base-accent-alt: var(--cb-red-base-vivid);
+  --cb-base-accent: var(--cb-turquoise-base);
+  --cb-base-accent-alt: var(--cb-yellow-base);
+  --cb-base-accent-aggressive: var(--cb-red-base-vivid);
 
   --cb-primary-color: var(--cb-black);
   --cb-secondary-color: var(--cb-white);
-  --cb-accent-color: var(--cb-yellow-main);
-  --cb-accent-color-alt: var(--cb-red-vivid);
+  --cb-accent-color: var(--cb-turquoise);
+  --cb-accent-color-alt: var(--cb-yellow-main);
+  --cb-accent-color-aggressive: var(--cb-red-vivid);
 
   --cb-background-color: var(--cb-black);
 
   --cb-text-color: var(--cb-white);
+  --cb-text-color-inverted: var(--cb-black);
 }
