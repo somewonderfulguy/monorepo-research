@@ -1,11 +1,13 @@
+import { HTMLAttributes } from 'react'
+
 import ControlBar from '../ControlBar'
 import Sidebar from '../Sidebar'
 
 import styles from './PlayerApp.module.css'
 
-const PlayerApp = () => {
+const PlayerApp = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   return (
-    <div className={styles.playerApp}>
+    <div className={`${styles.playerApp} ${className}`} {...props}>
       <div className={styles.mainContainer}>
         <main className={styles.viewContainer}>
           <img

@@ -6,8 +6,7 @@
   /* this is for disabling horizontal scroll of graffiti on control bar */
   overflow-x: hidden;
 
-  /* TODO: add themes */
-  background-color: hsl(58, 100%, 48%);
+  background-color: var(--cb-primary-color);
 
   --player-app-control-bar-height: 150px;
 }
@@ -33,9 +32,6 @@
 .viewContainer {
   max-width: 1521px;
   justify-self: center;
-}
-.viewContainer > * {
-  translate: 0 calc(var(--player-app-control-bar-height) / 2);
 }
 
 .sidebarContainer {

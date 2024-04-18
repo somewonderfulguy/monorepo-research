@@ -29,6 +29,9 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
+      '@repo/typescript':
+        specifier: workspace:*
+        version: link:../../packages/typescript
       '@storybook/addon-essentials':
         specifier: ^7.6.17
         version: 7.6.17(@types/react-dom@18.2.24)(@types/react@18.2.74)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -107,9 +110,6 @@ importers:
       typescript:
         specifier: ^5.2.2
         version: 5.4.4
-      typescript-plugin-css-modules:
-        specifier: ^5.1.0
-        version: 5.1.0(typescript@5.4.4)
       vite:
         specifier: ^5.1.4
         version: 5.2.8(@types/node@20.12.5)(less@4.2.0)(sass@1.74.1)(stylus@0.62.0)(terser@5.30.3)
@@ -347,6 +347,12 @@ importers:
       vite-plugin-lib-inject-css:
         specifier: ^2.0.0
         version: 2.0.1(vite@5.2.8(@types/node@20.12.5)(less@4.2.0)(sass@1.74.1)(stylus@0.62.0)(terser@5.30.3))
+
+  packages/typescript:
+    devDependencies:
+      typescript-plugin-css-modules:
+        specifier: ^5.1.0
+        version: 5.1.0(typescript@5.4.4)
 
 packages:
 

@@ -1,12 +1,18 @@
 import Player from '@repo/player';
 
-import '@repo/design-system/styles/reset.css';
-import '@repo/design-system/styles/fonts.css';
+import Menu from '../Menu';
+
+import styles from './CyberpunkApp.module.css';
 
 function CyberpunkApp() {
   return (
     <>
-      <Player />
+      <header className={styles.header}>
+        <div className={styles.menuContainer}>
+          <Menu />
+        </div>
+      </header>
+      <Player className={styles.player} />
     </>
   );
 }
