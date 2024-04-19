@@ -36,6 +36,20 @@
   :is(body.darkRed, body.dark) & {
     color: var(--cb-turquoise);
   }
+  :is(body.yellow) & {
+    color: var(--cb-white);
+  }
+  :is(body.yellow) &:hover {
+    color: var(--cb-turquoise);
+  }
+}
+
+/* run tests button (play icon) */
+#button-run-tests {
+  --bg-color: transparent;
+  :is(body.dark) & {
+    color: var(--cb-turquoise);
+  }
 }
 
 /* search field */
