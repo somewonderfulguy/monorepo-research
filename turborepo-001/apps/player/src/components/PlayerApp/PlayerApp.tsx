@@ -1,13 +1,25 @@
 import { HTMLAttributes } from 'react'
 
+import { BearStore } from '@repo/shared/types'
+
 import ControlBar from '../ControlBar'
 import Sidebar from '../Sidebar'
 
 import styles from './PlayerApp.module.css'
+import { StoreApi, UseBoundStore } from 'zustand'
 
-const PlayerApp = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
+type Props = HTMLAttributes<HTMLDivElement> & {
+  useBearStore: UseBoundStore<StoreApi<BearStore>>
+}
+
+const PlayerApp = ({ className, useBearStore, ...props }: Props) => {
+  const clearBears = useBearStore((s) => s.clear)
+
   return (
     <div className={`${styles.playerApp} ${className}`} {...props}>
+      <button type="button" onClick={clearBears}>
+        Clear bears
+      </button>
       <div className={styles.mainContainer}>
         <main className={styles.viewContainer}>
           <img

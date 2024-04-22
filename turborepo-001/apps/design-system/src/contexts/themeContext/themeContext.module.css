@@ -15,6 +15,8 @@
   --cb-yellow-alt-base: 73, 100%, 68%;
   --cb-turquoise-base: 184, 100%, 50%;
   --cb-turquoise-lighter-base: 180, 100%, 50%;
+  --cb-turquoise-light-white-base: 180, 100%, 84.52%;
+  --cb-turquoise-darker-base: 184, 51%, 24%;
   --cb-red-vivid-base: 349, 99%, 50%;
   --cb-red-mid-base: 2, 71%, 56%;
   --cb-red-base: 3, 100%, 67%;
@@ -23,6 +25,9 @@
   --cb-midnight-navy-base: 240, 50%, 6%;
   --cb-darkest-gray-base: 300, 18%, 8%;
 
+  /* color: hsl(184, 51%, 24%); */
+  /* color: hsl(184, 100%, 18%); */
+
   --cb-yellow-main: hsl(var(--cb-yellow-base));
   --cb-yellow-alt: hsl(var(--cb-yellow-alt-base));
   --cb-red: hsl(var(--cb-red-base));
@@ -30,6 +35,8 @@
   --cb-red-vivid: hsl(var(--cb-red-vivid-base));
   --cb-turquoise: hsl(var(--cb-turquoise-base));
   --cb-turquoise-lighter: hsl(var(--cb-turquoise-lighter-base));
+  --cb-turquoise-light-white: hsl(var(--cb-turquoise-light-white-base));
+  --cb-turquoise-darker: hsl(var(--cb-turquoise-darker-base));
   --cb-black: hsl(var(--cb-black-base));
   --cb-white: hsl(var(--cb-white-base));
   --cb-midnight-navy: hsl(var(--cb-midnight-navy-base));
@@ -47,8 +54,6 @@
   /* ---------------------------------------- */
 
   --cb-red-dark: hsl(3, 55%, 16%);
-  --cb-turquoise-dark: hsl(184, 51%, 24%);
-  --cb-turquoise-dark-alt: hsl(184, 100%, 18%);
   --cb-green: hsl(149, 85%, 52%);
   --cb-gray: hsl(10, 6%, 79%);
 
@@ -64,20 +69,17 @@
   --cb-turquoise-transparent: hsla(184, 100%, 50%, 0.12);
 }
 
-/* hsl(180, 100%, 50%) */
-
 .theme:global(.cyberpunk-ui-theme-yellow) {
   --cb-base: var(--cb-yellow-base);
   --cb-base-secondary: var(--cb-black-base);
   --cb-base-accent: var(--cb-turquoise-base);
-  --cb-accent-lighter: var(--cb-turquoise-lighter-base);
   --cb-base-accent-alt: var(--cb-red-vivid-base);
 
   --cb-primary-color: var(--cb-yellow-main);
   --cb-secondary-color: var(--cb-black);
   --cb-accent-color: var(--cb-turquoise);
-  --cb-accent-color-lighter: var(--cb-turquoise-lighter);
-  --cb-accent-color-alt: var(--cb-red-vivid);
+  --cb-accent-color-hover: var(--cb-turquoise-lighter);
+  --cb-accent-color-active: var(--cb-red-vivid);
 
   --cb-background-color: var(--cb-yellow-main);
   --cb-text-color: var(--cb-black);
@@ -89,11 +91,12 @@
   --cb-base-start: var(--cb-darkRed-background-gradient-start);
   --cb-base-end: var(--cb-darkRed-background-gradient-end);
   --cb-base-secondary: var(--cb-red-base);
-  --cb-base-accent: var(--cb-turquoise-base);
+  --cb-base-accent: var(--cb-turquoise-light-white-base);
 
   --cb-primary-color: var(--cb-midnight-navy);
   --cb-secondary-color: var(--cb-red);
   --cb-accent-color: var(--cb-turquoise);
+  --cb-accent-color-alt: var(--cb-turquoise-darker);
 
   --cb-background-image: var(--cb-darkRed-background-gradient);
   --cb-background-color: var(--cb-midnight-navy);
@@ -120,14 +123,13 @@
   --cb-base: var(--cb-black-base);
   --cb-base-secondary: var(--cb-white-base);
   --cb-base-accent: var(--cb-turquoise-base);
-  --cb-base-accent-alt: var(--cb-yellow-base);
-  --cb-base-accent-aggressive: var(--cb-red-base-vivid);
+  --cb-base-accent-hover: var(--cb-turquoise-lighter-base);
 
   --cb-primary-color: var(--cb-black);
   --cb-secondary-color: var(--cb-white);
   --cb-accent-color: var(--cb-turquoise);
-  --cb-accent-color-alt: var(--cb-yellow-main);
-  --cb-accent-color-aggressive: var(--cb-red-vivid);
+  --cb-accent-color-hover: var(--cb-turquoise-light-white);
+  --cb-accent-color-active: var(--cb-turquoise);
 
   --cb-background-color: var(--cb-black);
 

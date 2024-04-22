@@ -7,6 +7,7 @@
     "./hooks/useMutationObserver": "./hooks/useMutationObserver/useMutationObserver.ts",
     "./hooks/usePrevious": "./hooks/usePrevious/usePrevious.ts",
     "./hooks/useResizeObserver": "./hooks/useResizeObserver/useResizeObserver.ts",
+    "./types": "./types/index.ts",
     "./utils/classNames": "./utils/classNames.ts",
     "./utils/createContextStore": "./utils/createContextStore.tsx",
     "./utils/debounce": "./utils/debounce.ts",
