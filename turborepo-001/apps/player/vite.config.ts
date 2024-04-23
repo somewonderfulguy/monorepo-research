@@ -5,6 +5,7 @@ import path from 'path'
 import { libInjectCss } from 'vite-plugin-lib-inject-css'
 import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets'
 import svgr from 'vite-plugin-svgr'
+import federation from '@originjs/vite-plugin-federation'
 
 import { copyPublicDirDeps } from './vite/copyPublicDirDeps'
 
@@ -52,7 +53,14 @@ export default defineConfig({
       }
     }),
     dts(),
-    svgr()
+    svgr(),
+    federation({
+      name: '@mf/player',
+      remotes: {
+        '@mf/state': 'http://localhost:6001/assets/remoteEntry.js'
+      },
+      shared: ['zustand']
+    })
   ],
   build: {
     target: 'esnext',

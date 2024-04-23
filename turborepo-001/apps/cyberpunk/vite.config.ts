@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import svgr from 'vite-plugin-svgr';
+import federation from '@originjs/vite-plugin-federation';
 
 export const alias = {
   // keep in alphabetical order
@@ -13,7 +14,17 @@ export const alias = {
 };
 
 export default defineConfig({
-  plugins: [react(), svgr()],
+  plugins: [
+    react(),
+    svgr(),
+    federation({
+      name: '@mf/cyberpunk',
+      remotes: {
+        '@mf/state': 'http://localhost:6001/assets/remoteEntry.js'
+      },
+      shared: ['zustand']
+    })
+  ],
   resolve: {
     alias
   }

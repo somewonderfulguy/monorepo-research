@@ -7,18 +7,31 @@ import Sidebar from '../Sidebar'
 
 import styles from './PlayerApp.module.css'
 import { StoreApi, UseBoundStore } from 'zustand'
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import useThemeStore from '@mf/state/themeStore'
 
 type Props = HTMLAttributes<HTMLDivElement> & {
   useBearStore: UseBoundStore<StoreApi<BearStore>>
 }
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+window.useBearStorePlayer = useThemeStore
+
 const PlayerApp = ({ className, useBearStore, ...props }: Props) => {
   const clearBears = useBearStore((s) => s.clear)
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const clearTheBears = useThemeStore((s: any) => s.removeAllBears)
 
   return (
     <div className={`${styles.playerApp} ${className}`} {...props}>
       <button type="button" onClick={clearBears}>
         Clear bears
+      </button>
+      <button type="button" onClick={clearTheBears}>
+        Clear the bears
       </button>
       <div className={styles.mainContainer}>
         <main className={styles.viewContainer}>
