@@ -1,8 +1,12 @@
 {
-  "name": "state",
+  "name": "@repo/state",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    "./types": "./types/index.ts",
+    "./types/mf-imports": "./types/mf-imports.ts"
+  },
   "scripts": {
     "dev": "vite --port 6002 --strictPort",
     "build": "tsc && vite build",

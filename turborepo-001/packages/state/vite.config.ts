@@ -10,7 +10,7 @@ export default defineConfig({
       name: '@mf/state',
       filename: 'remoteEntry.js',
       exposes: {
-        './themeStore': './themeStore.ts'
+        './themeStore': './stores/themeStore.ts'
       },
       shared: ['zustand']
     })
