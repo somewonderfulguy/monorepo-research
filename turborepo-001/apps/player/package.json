@@ -7,10 +7,10 @@
     ".": "./src/components/PlayerApp/PlayerApp.tsx"
   },
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 7030",
     "build": "tsc && vite build && node ./scripts/postLibBuild.cjs",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview --port 7030"
   },
   "dependencies": {
     "@repo/design-system": "workspace:*",

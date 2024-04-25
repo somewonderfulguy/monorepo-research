@@ -5,15 +5,15 @@
   "type": "module",
   "author": "Dmitriy Yastrebov",
   "scripts": {
-    "dev": "vite",
-    "dev-offline": "cross-env VITE_OFFLINE=true vite",
+    "dev": "vite --port 7010",
+    "dev-offline": "cross-env VITE_OFFLINE=true vite --port 7010",
     "build": "tsc && vite build",
-    "preview": "vite preview",
+    "preview": "vite preview --port 7010",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "check-types": "tsc",
     "test": "vitest",
     "coverage": "vitest run --coverage",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 7011",
     "build-storybook": "storybook build"
   },
   "dependencies": {

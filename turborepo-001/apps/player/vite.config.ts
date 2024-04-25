@@ -57,7 +57,7 @@ export default defineConfig({
     federation({
       name: '@mf/player',
       remotes: {
-        '@mf/state': 'http://localhost:6001/assets/remoteEntry.js'
+        '@mf/state': 'http://localhost:7000/assets/remoteEntry.js'
       },
       shared: ['zustand']
     })
