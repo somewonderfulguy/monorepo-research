@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { SetupWorker } from 'msw';
 import 'augmented-ui/augmented-ui.min.css';
 
-import { ThemeProvider } from '@repo/design-system/contexts/themeContext';
+import ThemeWrapper from '@repo/design-system/ThemeWrapper';
 import '@repo/design-system/styles/reset.css';
 import '@repo/design-system/styles/fonts.css';
 
@@ -31,9 +31,9 @@ launchOffline().then(() =>
     identifierPrefix: 'cyberpunk-'
   }).render(
     <StrictMode>
-      <ThemeProvider style={{ width: '100%', height: '100%' }}>
+      <ThemeWrapper style={{ width: '100%', height: '100%' }} theme="yellow">
         <CyberpunkApp />
-      </ThemeProvider>
+      </ThemeWrapper>
     </StrictMode>
   )
 );

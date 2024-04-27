@@ -1,5 +1,5 @@
 import Button from '@repo/design-system/controls/Button'
-import { ThemeProvider } from '@repo/design-system/contexts/themeContext'
+import ThemeWrapper from '@repo/design-system/ThemeWrapper'
 import PlayIcon from '@repo/design-system/assets/trianglePointsToRight.svg?react'
 
 import styles from './ControlBar.module.css'
@@ -9,7 +9,7 @@ import sprayBottomLeak from './assets/sprayBottomLeak2.png'
 
 const ControlBar = () => {
   return (
-    <ThemeProvider initialTheme="whiteOnBlack">
+    <ThemeWrapper theme="whiteOnBlack">
       <div className={styles.controlBarWrapper}>
         <div className={styles.controlBarContainer}>
           <div
@@ -40,7 +40,7 @@ const ControlBar = () => {
           </div>
         </div>
       </div>
-    </ThemeProvider>
+    </ThemeWrapper>
   )
 }
 

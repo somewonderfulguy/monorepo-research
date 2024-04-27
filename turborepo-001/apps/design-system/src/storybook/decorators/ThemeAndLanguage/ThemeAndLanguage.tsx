@@ -3,7 +3,7 @@ import type { Decorator } from '@storybook/react'
 
 import classNames from '@repo/shared/utils/classNames'
 
-import { ThemeProvider } from '../../../contexts/themeContext'
+import ThemeWrapper from '../../../components/ThemeWrapper'
 import { Theme, ThemeStorybook } from '../../../types/theme'
 
 import styles from './ThemeAndLanguage.module.css'
@@ -40,26 +40,26 @@ const ThemeAndLanguage: Decorator = (Story, context) => {
       }
     >
       {isDocs ? (
-        <ThemeProvider
+        <ThemeWrapper
+          theme={themeStorybook}
           className={classNames(getClassNames(themeStorybook))}
-          initialTheme={themeStorybook}
           style={gridElementCss}
         >
           <Story />
-        </ThemeProvider>
+        </ThemeWrapper>
       ) : (
         theme.map((_theme) => (
-          <ThemeProvider
+          <ThemeWrapper
+            theme={_theme}
+            key={_theme}
             className={classNames(
               getClassNames(_theme),
               _theme === 'whiteOnBlack' && styles.gridElementWhiteOnBlack
             )}
-            initialTheme={_theme}
-            key={_theme}
             style={gridElementCss}
           >
             <Story />
-          </ThemeProvider>
+          </ThemeWrapper>
         ))
       )}
     </div>
