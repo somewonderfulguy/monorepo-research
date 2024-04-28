@@ -8,8 +8,6 @@
   *
   */
 
-/* TODO: revisit it, go through all files that use variables */
-/* TODO: remove transparent colors - use base colors instead */
 :root {
   --cb-yellow-base: 58, 100%, 48%;
   --cb-yellow-alt-base: 73, 100%, 68%;
@@ -24,9 +22,6 @@
   --cb-black-base: 0, 0%, 0%;
   --cb-midnight-navy-base: 240, 50%, 6%;
   --cb-darkest-gray-base: 300, 18%, 8%;
-
-  /* color: hsl(184, 51%, 24%); */
-  /* color: hsl(184, 100%, 18%); */
 
   --cb-yellow-main: hsl(var(--cb-yellow-base));
   --cb-yellow-alt: hsl(var(--cb-yellow-alt-base));
@@ -50,23 +45,6 @@
     hsl(var(--cb-darkRed-background-gradient-end)) 0%,
     hsl(var(--cb-darkRed-background-gradient-start)) 100%
   );
-
-  /* ---------------------------------------- */
-
-  --cb-red-dark: hsl(3, 55%, 16%);
-  --cb-green: hsl(149, 85%, 52%);
-  --cb-gray: hsl(10, 6%, 79%);
-
-  /* TODO: remove, use base variables instead */
-  --cb-blue-transparent: hsla(203, 98%, 50%, 0.1);
-  --cb-darkest-gray-transparent: hsla(300, 18%, 8%, 0.6);
-  --cb-light-gray-transparent: hsla(0, 0%, 100%, 0.2);
-  --cb-black-transparent: hsla(var(--cb-black-base), 0.5);
-  --cb-yellow-transparent: hsla(73, 100%, 68%, 0.15);
-  --cb-yellow-more-transparent: hsla(73, 100%, 68%, 0.05);
-  --cb-red-transparent: hsla(3, 100%, 67%, 0.15);
-  --cb-turquoise-opaque: hsla(184, 100%, 50%, 0.75);
-  --cb-turquoise-transparent: hsla(184, 100%, 50%, 0.12);
 }
 
 .theme:global(.cyberpunk-ui-theme-yellow) {
@@ -80,6 +58,7 @@
   --cb-accent-color: var(--cb-turquoise);
   --cb-accent-color-hover: var(--cb-turquoise-lighter);
   --cb-accent-color-active: var(--cb-red-vivid);
+  --cb-accent-color-alt: var(--cb-red-vivid);
 
   --cb-background-color: var(--cb-yellow-main);
   --cb-text-color: var(--cb-black);
@@ -124,12 +103,14 @@
   --cb-base-secondary: var(--cb-white-base);
   --cb-base-accent: var(--cb-turquoise-base);
   --cb-base-accent-hover: var(--cb-turquoise-lighter-base);
+  --cb-base-accent-alt: var(--cb-yellow-base);
 
   --cb-primary-color: var(--cb-black);
   --cb-secondary-color: var(--cb-white);
   --cb-accent-color: var(--cb-turquoise);
   --cb-accent-color-hover: var(--cb-turquoise-light-white);
   --cb-accent-color-active: var(--cb-turquoise);
+  --cb-accent-color-alt: var(--cb-yellow-main);
 
   --cb-background-color: var(--cb-black);
 
